@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+}
+#logo {
+  font-size: 4rem;
+  font-family: "Geostar Fill", serif;
+  font-weight: 400;
+  color: black;
+}
+header {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+.nav-list {
+  display: flex;
+
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem;
+}
+.nav-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav-item a {
+  text-decoration: none;
+  display: block;
+  padding: 2rem;
+  font-weight: 500;
+  color: black;
+}
+section {
+  min-height: 100dvh;
+}
+#home {
+  padding-top: 201px;
+  display: flex;
+  min-height: 100dvh;
+}
+.big {
+  font-size: 4.3rem;
+}
+.home-left {
+  padding-left: 13rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 150px auto 1fr;
+  grid-template-areas:
+    " . "
+    " w "
+    " . ";
+}
+.home-content {
+  grid-area: w;
+}
+
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+.home-right .image {
+  max-width: 100%;
+  overflow: hidden;
+}
+.image img {
+  width: 40rem;
+  height: 35rem;
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+}
+.overview {
+  padding-top: 201px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
