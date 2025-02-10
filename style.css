@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --main-color: #69795b;
+  --whte-color: white;
+  --black-color: black;
+  --second-color: #e2dcd0;
+}
 *,
 *::before,
 *::after {
@@ -36,7 +42,7 @@ body ul {
   font-size: 4rem;
   font-family: "Geostar Fill", serif;
   font-weight: 400;
-  color: black;
+  color: var(--whte-color);
 }
 header {
   top: 0;
@@ -62,16 +68,19 @@ header {
   display: block;
   padding: 2rem;
   font-weight: 500;
-  color: black;
+  color: var(--whte-color);
 }
 section {
   min-height: 100dvh;
+  background-color: #f3ecde;
 }
 #home {
   padding-top: 201px;
   display: flex;
   min-height: 100dvh;
   position: relative;
+  background-color: var(--main-color);
+  color: var(--second-color);
 }
 .arrow {
   width: 2rem;
@@ -125,8 +134,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  background: linear-gradient(to right, #292525, #86a0bb);
+  color: var(--second-color);
+  background-color: var(--black-color);
 }
 .overview-top {
   font-size: 2rem;
@@ -155,10 +164,10 @@ h1.skills {
   display: flex;
   gap: 2rem;
 }
-.links svg {
+svg {
   width: 2rem;
   height: 2rem;
-  fill: rgb(12, 12, 12);
+  fill: var(--second-color);
 }
 
 /* projects */
@@ -198,8 +207,134 @@ h1.skills {
   height: auto;
   object-fit: cover;
   border-radius: 0.3rem;
-  aspect-ratio: 16/9;
+  aspect-ratio: 19/9;
 }
+.more-projects {
+  padding: 3rem;
+}
+/* contact */
+.contact {
+  padding-top: 201px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-color: var(--main-color);
+}
+.contact-upper {
+  padding-left: 16rem;
+  & h3 {
+    font-size: 3rem;
+  }
+  & p {
+    font-size: 1.5rem;
+  }
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+textarea {
+  max-width: 20rem;
+  max-height: 20rem;
+}
+input,
+textarea {
+  color: #141414c0;
+  width: 20rem;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #69795b;
+}
+
+button {
+  width: 10rem;
+  background: var(--black-color);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #8ca17a;
+}
+
+form .contact-lower {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  padding: 4rem 10rem;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  label {
+    font-weight: 500;
+  }
+}
+.details {
+  padding-left: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  h4 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+/* Footer */
+.footer {
+  background-color: var(--black-color);
+  color: var(--whte-color);
+  display: flex;
+  flex-direction: column;
+  #logo {
+    color: var(--whte-color);
+  }
+  a {
+    text-decoration: none;
+  }
+  svg {
+    fill: var(--whte-color);
+  }
+}
+.top {
+  padding: 5rem 20rem;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.below {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rem;
+}
+.socials {
+  display: flex;
+  gap: 2rem;
+}
+/* animation */
+
 /* media querries */
 @media (max-width: 600px) {
   .header ul {
@@ -240,7 +375,7 @@ h1.skills {
   .overview-mid {
     font-size: 0.7rem;
 
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     flex-direction: column;
     padding: 2rem;
   }
@@ -272,7 +407,7 @@ h1.skills {
   .links svg {
     width: 1.5rem;
     height: 1.5rem;
-    fill: rgb(12, 12, 12);
+    fill: rgb(255, 250, 250);
   }
   .projects {
     padding-top: 3rem;
@@ -286,5 +421,66 @@ h1.skills {
     margin-top: 1rem;
 
     grid-template-columns: repeat(1, 1fr);
+  }
+  .contact {
+    padding-top: 3rem;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .contact-upper {
+    padding-left: 1rem;
+    & h3 {
+      font-size: 3rem;
+    }
+    & p {
+      font-size: 1.5rem;
+    }
+  }
+
+  form .contact-lower {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .middle {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .details {
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    #logo {
+      color: var(--whte-color);
+    }
+    a {
+      text-decoration: none;
+    }
+    svg {
+      fill: var(--whte-color);
+    }
+  }
+  .top {
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .below {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+  }
+  .socials {
+    display: flex;
+    gap: 1rem;
   }
 }
