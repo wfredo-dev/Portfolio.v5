@@ -4,7 +4,22 @@
 *::after {
   box-sizing: border-box;
 }
-
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.dot {
+  letter-spacing: 1rem;
+}
 html,
 body {
   padding: 0;
@@ -12,6 +27,10 @@ body {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   scroll-behavior: smooth;
+}
+body ul {
+  list-style: none;
+  padding-left: 0;
 }
 #logo {
   font-size: 4rem;
@@ -24,6 +43,7 @@ header {
   left: 0;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 .nav-list {
   display: flex;
@@ -51,6 +71,15 @@ section {
   padding-top: 201px;
   display: flex;
   min-height: 100dvh;
+  position: relative;
+}
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  fill: rgb(12, 12, 12);
+  position: absolute;
+  bottom: 8rem;
+  right: 8rem;
 }
 .big {
   font-size: 4.3rem;
@@ -93,6 +122,169 @@ section {
 .overview {
   padding-top: 201px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  background: linear-gradient(to right, #292525, #86a0bb);
+}
+.overview-top {
+  font-size: 2rem;
+  margin-bottom: 10rem;
+}
+.overview-mid {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 15rem;
+}
+.overview-bottom {
+  align-self: end;
+  font-size: 1.6rem;
+  padding: 3rem;
+}
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, 260px);
+}
+h1.skills {
+  letter-spacing: 0.3rem;
+}
+.links {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+.links svg {
+  width: 2rem;
+  height: 2rem;
+  fill: rgb(12, 12, 12);
+}
+
+/* projects */
+.projects {
+  min-height: 100dvh;
+  padding-top: 201px;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.medtrack {
+  display: flex;
+  flex-direction: column;
+}
+.upper {
+  display: flex;
+  .m-left {
+    flex: 1;
+  }
+  .m-right {
+    flex: 1;
+  }
+}
+.m-right img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  width: 100%;
+}
+.lower {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.lower img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  aspect-ratio: 16/9;
+}
+/* media querries */
+@media (max-width: 600px) {
+  .header ul {
+    flex-direction: column;
+    display: none;
+  }
+  .big {
+    font-size: 2.3rem;
+  }
+  #home {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+    flex-direction: column-reverse;
+  }
+  .home-left {
+    padding: 3rem;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+  }
+  .home-left {
+    display: flex;
+  }
+  .overview {
+    padding-top: 3rem;
+  }
+
+  .overview-top {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    padding: 3rem 0;
+  }
+  .overview-mid {
+    font-size: 0.7rem;
+
+    margin-bottom: 5rem;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .overview-bottom {
+    align-self: end;
+    font-size: 0.7rem;
+    padding: 3rem;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  h1.skills {
+    letter-spacing: 0.3rem;
+  }
+  .arrow {
+    p {
+      writing-mode: vertical-rl;
+      justify-self: center;
+      padding-bottom: 1rem;
+    }
+    width: 1rem;
+    height: 2rem;
+    fill: rgb(12, 12, 12);
+
+    bottom: 5rem;
+    right: 1rem;
+  }
+  .links svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: rgb(12, 12, 12);
+  }
+  .projects {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .upper {
+    flex-direction: column;
+  }
+  .lower {
+    margin-top: 1rem;
+
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
