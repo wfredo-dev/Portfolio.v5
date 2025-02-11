@@ -70,6 +70,10 @@ header {
   font-weight: 500;
   color: var(--whte-color);
 }
+.nav-item :hover,
+#logo:hover {
+  color: rgb(233, 153, 62);
+}
 section {
   min-height: 100dvh;
   background-color: #f3ecde;
@@ -333,13 +337,44 @@ form .contact-lower {
   display: flex;
   gap: 2rem;
 }
+.burger {
+  width: 7rem;
+  display: none;
+}
+.nav-list.show {
+  left: 0;
+}
 /* animation */
 
 /* media querries */
 @media (max-width: 600px) {
-  .header ul {
+  .nav-item :hover {
+    background-color: rgba(190, 185, 185, 0.212);
+  }
+  .burger {
+    display: block;
+  }
+  .header {
+    background-color: rgba(0, 0, 0, 0.74);
+  }
+  .nav-item:nth-child(3) {
+    order: -1;
+  }
+
+  .nav-list {
+    transition: left 0.3s ease;
+    margin: 0;
     flex-direction: column;
-    display: none;
+    left: -100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.74);
+    width: 100%;
+    gap: 0;
+    a {
+      display: block;
+
+      width: 100%;
+    }
   }
   .big {
     font-size: 2.3rem;
